@@ -3,20 +3,20 @@ const { Schema } = mongoose;
 const UserSchema = new Schema({
     name:{
         type:String,
-        require:ture
+        require:true
     },
     email:{
         type:String,
-        require:ture,
+        require:true,
         unique:true
     },
     password:{
         type:String,
-        require:ture
+        require:true
     },
     date:{
-        type:date,
-        default:date.now
+        type:Date,
+        default:Date.now
     },
   });
   module.exports=mongoose.model('user',UserSchema)
