@@ -21,3 +21,4 @@ const UserSchema = new Schema({
   });
   const User =mongoose.model('user',UserSchema)
   module.exports=User
+//   name of clooection will be 'user'
