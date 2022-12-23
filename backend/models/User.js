@@ -20,5 +20,4 @@ const UserSchema = new Schema({
     },
   });
   const User =mongoose.model('user',UserSchema)
-  User.createIndexes(); // for unique user
   module.exports=User
