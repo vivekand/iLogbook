@@ -1,5 +1,5 @@
 import React, { useState } from "react"; // creating state
-import noteContext from "./noteContext";
+import noteContext from "./noteContext"; 
 const NoteState = (props) => {
   const notesInitial=[
     {
@@ -95,7 +95,8 @@ const NoteState = (props) => {
   ]
 
 
-    const [notes,setNotes]= useState(notesInitial);
+    const [notes,setNotes]= useState(notesInitial);  // note= initialnote
+
     // Add a note 
     console.log("adding a note");
      const addNote=(title,description,tag)=>{
@@ -107,13 +108,14 @@ const NoteState = (props) => {
         "tag": tag,
         "date": "2022-12-23T19:57:02.215Z",
         "__v": 0}     // concat return an array whereas push updates an array
-        setNotes(notes.concat(note));
+        setNotes(notes.concat(note));   // adding "note" into "notse "
      }
      
     // delete a note
 
-    const deleteNote=()=>{
-        
+    const deleteNote=(id)=>{
+        const newNote=notes.filter((note)=>{return note._id!==id});
+        setNotes(newNote);
     }
 
     // Edit a note 

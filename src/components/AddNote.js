@@ -2,8 +2,7 @@ import React ,{useContext, useState} from "react";
 import noteContext from "../context/notes/noteContext";
 const AddNote = () => {
   const context = useContext(noteContext);
-  const { addNote } = context;
-
+  const {addNote} = context;
   const [note,setNote]=useState({title:"",description:"",tag:"default"})
   const handleClick=(e)=>{
        e.preventDefault();  // using this function avoid reload
@@ -39,7 +38,7 @@ const AddNote = () => {
           </label>
         </div>
         <button type="submit" className="btn btn-primary" onClick={handleClick}>
-          Submit
+          Add Note
         </button>
       </form>
     </div>
