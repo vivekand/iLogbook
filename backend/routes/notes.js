@@ -66,7 +66,7 @@ router.post('/addnote', fetchuser,[
     if(note.user.toString()!=req.user.id){   // for secruity porpuse checking 
         return res.status(401).send("Not allwoed")
     }
-    note= await Notes.findByIdAndUpdate(req.params.id,{$set:newNotes} ,{new:true})
+    note= await Notes.findByIdAndUpdate(req.params.id,{$set:newNotes},{new:true})
     res.json(note);
     
 } catch (error) {
@@ -96,10 +96,6 @@ router.post('/addnote', fetchuser,[
     res.status(500).send("Internal Server Error");
 }
 }) 
-
-
-
-
 
 
 module.exports=router
