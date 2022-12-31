@@ -9,6 +9,7 @@ const Noteitem = (props) => {
   const { note,updateNote } = props; // destructuring --> props.note
   const handleDelete=()=>{
     deleteNote(note._id);
+    props.showAlert("Deleted successfully","success")
   }
 
 
@@ -19,8 +20,8 @@ const Noteitem = (props) => {
             <div className="d-flex align-items-center">
           <h5 className="card-title">{note.title}</h5>
           {/* <i className="fa-solid fa-trash-can mx-2" onClick={()=>{deleteNote(note._id)}}></i> */}
-          <i className="fa-solid fa-trash-can mx-2" onClick={handleDelete}></i>
-          <i className="fa-solid fa-pen-to-square mx-2" onClick={()=>{updateNote(note)}}></i>
+          <i className="fa-solid fa-trash-can mx-2" onClick={handleDelete }></i>
+          <i className="fa-solid fa-pen-to-square mx-2" onClick={()=>{updateNote(note);}}></i>
             </div>
           <p className="card-text">{note.description} </p>
         </div>
